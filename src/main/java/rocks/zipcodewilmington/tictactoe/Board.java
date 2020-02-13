@@ -20,11 +20,32 @@ public class Board {
             }
 
         }
-        if (board[0][0])
+        if (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X') {
+            return true;
+        }
+        if (board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X') {
+            return true;
+        }
+        return false;
     }
 
     public Boolean isInFavorOfO() {
-        return null;
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][0] == 'O' && board[i][1] == 'O' && board[i][2] == 'O') {
+                return true;
+            }
+            if (board[0][i] == 'O' && board[1][i] == 'O' && board[2][i] == 'O') {
+                return true;
+            }
+
+        }
+        if (board[0][0] == 'O' && board[1][1] == 'O' && board[2][2] == 'O') {
+            return true;
+        }
+        if (board[0][2] == 'O' && board[1][1] == 'O' && board[2][0] == 'O') {
+            return true;
+        }
+        return false;
     }
 
     public Boolean isTie() {
