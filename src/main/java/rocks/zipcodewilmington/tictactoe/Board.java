@@ -49,11 +49,25 @@ public class Board {
     }
 
     public Boolean isTie() {
-        return null;
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board.length; j++) {
+                if (board[i][j] == ' ') {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public String getWinner() {
-        return null;
+        if (isInFavorOfO()) {
+            return "O";
+        }
+        if (isInFavorOfX()){
+            return "X";
+        }
+        
+        return "";
     }
 
 }
